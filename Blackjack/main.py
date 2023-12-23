@@ -1,8 +1,10 @@
 import random
 
+
 def drawCard():
     card = random.randint(1,11)
     return card
+
 
 def dealerPlays(firstCard):
     cards = [firstCard, drawCard()]
@@ -39,7 +41,7 @@ def playerPlays(cards, dealerCard):
         print(f"Your cards are {cards}")
 
         print(f"Your current total is: {sum(cards)}\n")
-        hit = input("Would you like another? (y/n)") == "y"
+        hit = input("Would you like another? (y/n) ") == "y"
         if hit:
             cards.append(drawCard())
         else:
@@ -67,6 +69,7 @@ def calculateScore(playerTotal, dealerTotal):
     else:
         print("Dealer won. Their score is higher.")
 
+
 def play():
     print("Welcome to the game of blackjack!")
     dealerCard1 = drawCard()
@@ -82,4 +85,12 @@ def play():
     calculateScore(playerTotal, dealerTotal)
 
 
-play()
+playAgain = True
+
+while playAgain:
+    play()
+    inputToPlay = input("Press Y to play again.")
+    if inputToPlay == "Y":
+        playAgain = True
+    else:
+        playAgain = False
