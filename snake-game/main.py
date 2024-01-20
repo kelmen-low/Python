@@ -2,6 +2,7 @@ from turtle import Screen
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
+from boundary import Boundary
 import time
 
 
@@ -19,7 +20,7 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
-scoreboard.add_boundaries()
+boundary = Boundary()
 
 # add key commands
 screen.listen()

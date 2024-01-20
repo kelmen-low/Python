@@ -27,12 +27,3 @@ class Scoreboard(Turtle):
         self.goto(0,0)
         self.write(f"GAME OVER!\n", align=ALIGN, font=GAME_OVER_FONT)
         self.write(f"Final Score = {self.score}", align=ALIGN, font=GAME_OVER_FONT)
-
-    def add_boundaries(self):
-        self.goto(-310,310)
-        self.pendown()
-        self.goto(310,310)
-        self.goto(310, -310)
-        self.goto(-310, -310)
-        self.goto(-310,310)
-        self.penup()
