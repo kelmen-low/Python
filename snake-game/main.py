@@ -8,7 +8,7 @@ import time
 # Create the screen object with:
 # Screen size, color and title
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=700, height=700)
 screen.bgcolor("black")
 screen.title("Snake")
 
@@ -19,6 +19,7 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
+scoreboard.add_boundaries()
 
 # add key commands
 screen.listen()
@@ -38,13 +39,13 @@ while game_is_on:
     snake.move()
 
     # Detect collision with food
-    if snake.head.distance(food) < 15:
+    if snake.head.distance(food) < 17:
         food.refresh()
         scoreboard.add_point()
         snake.extend()
 
     # Detect collision with wall
-    if snake.head.xcor() > 300 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -300:
+    if snake.head.xcor() > 300 or snake.head.xcor() < -300 or snake.head.ycor() > 300 or snake.head.ycor() < -300:
         game_is_on = False
         scoreboard.game_over()
 
