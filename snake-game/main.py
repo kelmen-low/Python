@@ -16,7 +16,7 @@ screen.title("Snake")
 # Set the screen update tracer
 screen.tracer(0)
 
-# generate the snake object onto the screen
+# generate the Snake game objects onto the screen
 snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
@@ -25,9 +25,9 @@ boundary = Boundary()
 # add key commands
 screen.listen()
 screen.onkey(snake.up, "Up")
-screen.onkey(snake.down,"Down")
-screen.onkey(snake.left,"Left")
-screen.onkey(snake.right,"Right")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
 # turn on the game
 game_is_on = True
